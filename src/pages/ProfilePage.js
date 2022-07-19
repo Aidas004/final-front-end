@@ -84,11 +84,11 @@ const ProfilePage = ({user}) => {
         setUser(data.user)
     }
 
-    const mappedProducts = myThemes.map((x, i) => <ThemeCard user={user} key={i} item={x}/>)
+    const mappedProducts = myThemes.map((x, i) => <ThemeCard getUserThemes={getUserThemes} user={user} key={i} item={x}/>)
     return (
         <div className='container'>
             {user1 && <div className="userCard column shadow d-flex justify-content-around">
-                <div className=' w-m-100 text-center column align-items-center d-flex'>
+                <div className='w-m-100 text-center column align-items-center d-flex'>
                     <img src={user1.profileImage} alt=""/>
                     <div className='d-flex flex-column justify-content-between padding w-100 h-100 '>
                         <div className='w-auto text-start'>
@@ -104,10 +104,10 @@ const ProfilePage = ({user}) => {
                         </div>
                         <div className='d-flex column w-100 justify-content-between'>
                             <div onClick={() => setTrigger(false)}
-                                 className='updateButton m-10'>Mano sukurtos temos
+                                 className='updateButton m-10'>Mano temos
                             </div>
                             <div onClick={() => myAnswersBtn()}
-                                 className='updateButton m-10'>Mano parasyti atsakymai
+                                 className='updateButton m-10'>Mano atsakymai
                             </div>
                         </div>
                     </div>
@@ -115,7 +115,7 @@ const ProfilePage = ({user}) => {
                 <div className='d-flex btn-w25 flex-column justify-content-between'>
                     <div onClick={() => setModal(true)} className='updateButton'>Pakeisti profilio nuotrauką</div>
                     <div onClick={() => setEmailModal(true)} className='updateButton'>Pakeisti el. pašto adresą</div>
-                    <div onClick={() => navigate('/productUpload')} className='updateButton'>Kurti naują temą</div>
+                    <div onClick={() => navigate('/productUpload')} className='updateButton'>Kurti temą</div>
                 </div>
             </div>}
             {!trigger ?

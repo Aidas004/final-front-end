@@ -200,6 +200,7 @@ input::-webkit-inner-spin-button {
 }
 .m-10 {
     margin: 0 5px;
+    width: 100%;
 }
 .w50 {
     width: 50%;
@@ -208,6 +209,9 @@ input::-webkit-inner-spin-button {
     text-align: center;
     justify-content: center;
     align-items: center;
+}
+.w-m-100 {
+    width: 75%;
 }
 @media only screen and (min-width: 991px) {
     .w-sm-100 {
@@ -282,5 +286,8 @@ input::-webkit-inner-spin-button {
     }
     .productCardInside {
         flex-direction: column;
+    }
+    .w-m-100 {
+        width: 100%;
     }
 }

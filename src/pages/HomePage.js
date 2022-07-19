@@ -10,7 +10,9 @@ const HomePage = ({setFavorites, favorites}) => {
             setFavorites(JSON.parse(data))
         }
     }, [])
-
+    const array1 = [1, 2, 3];
+    const array2 = [4, 5, 6];
+    console.log([...array1, ...array2])
     async function getAllProducts () {
         const res = await fetch('http://localhost:4000/getAllProducts')
         const data = await res.json().catch(e => {
@@ -33,6 +35,22 @@ const HomePage = ({setFavorites, favorites}) => {
 
     const mappedProducts = allProds.map((x, i) => <ThemeCard remove={remove} favorites={favorites} setFavorites={setFavorites} key={i} item={x} />)
 
+    let numbers = [1, 2, 3, 4, 5];
+    let total = 0;
+    let i = 0
+    function start (a) {
+        let averageValue = 0;
+        if (a.length > 0) {
+            for (i = 0; i < a.length; i++) {
+                total += a[i]
+            }
+            averageValue = total / a.length
+        }
+        return averageValue
+    }
+
+    let average = start(numbers)
+    console.log("i " + i,  "total " + total)
 
     return (
         <div className='container p-0 flex-column mb-5 justify-content-center align-items-center d-flex'>

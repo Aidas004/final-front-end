@@ -26,3 +26,8 @@
 .productCard:last-child {
     border: none;
 }
+.notification {
+    position: relative;
+    top: 2px;
+    right: 2px;
+}

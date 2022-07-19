@@ -7,7 +7,7 @@ const LoginPage = ({setUser}) => {
     const emailRef = useRef()
     const passwordOne = useRef()
     const [warning, setWarning] = useState()
-
+    
     async function login() {
         const user = {
             email: emailRef.current.value,
